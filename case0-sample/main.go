@@ -5,7 +5,7 @@ package main
 import "fmt"
 
 func CountLength(a, b float32) float32 {
-	// write your code below
+    return a*a + b*b;
 }
 
 func main() {
