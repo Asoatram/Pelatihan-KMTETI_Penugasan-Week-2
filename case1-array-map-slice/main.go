@@ -18,12 +18,12 @@ func main() {
 
 	// Part 1: Mengapa terdapat error pada baris-baris kode berikut?
 	// 				 Perbaiki baris-baris berikut agar program dapat dijalankan
-	myArr := [5]uint{0, 1, 2, 4, 5, 6}
+	myArr := [6]uint{0, 1, 2, 4, 5, 6}
 
 	fmt.Println(myArr)
 	fmt.Println(myArr[5])
 	// -- End of Part 1 --
-
+	
 	// Part 2: Output program tidak sesuai dengan EXPECETED OUTPUT
 	//         Jangan lakukan perubahan langsung pada stdAge di awal.
 	//         Coba gunakan key untuk melakukan perubahan dan menambahkan
@@ -34,21 +34,34 @@ func main() {
 		"Johannes": 19,
 		"Imanuel":  20,
 	}
+	stdAge["Siska"] = 12;
 
 	fmt.Println("Umur Imanuel tahun ini:", stdAge["Imanuel"])
 	fmt.Println("Siswa baru, Siska berumur:", stdAge["Siska"])
 	// -- End of Part 2 --
 
-	// Part 3: Baris-baris kode berikut seharusnya akan menampilkan
+	
+    // Part 3: Baris-baris kode berikut seharusnya akan menampilkan
 	//         bilangan prima antara 10 hingga 30.
 	//         Identifikasi letak kesalahan logika pada program dan
 	//         koreksi agar menampilkan output yang sesuai.
 	var primes []int
+	var isPrime bool = true;
 	for i := 10; i < 30; i++ {
-		if i%2 != 0 && i%3 != 0 && i%5 != 0 && i%7 != 0 {
-		}
-		primes = append(primes, i)
+	    isPrime = true;
+	    for j:= 2; j < i; j++{
+		    if(i % j == 0)  {
+		        isPrime = false;
+		        break;
+		    }
+	    }
+
+	    if(isPrime == true){
+	   		primes = append(primes, i)
+	    }
 	}
 
 	fmt.Println(primes)
+
+
 }
